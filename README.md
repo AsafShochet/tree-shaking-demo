@@ -24,3 +24,5 @@ Summary:
 2. Optimize the consumer library
 
 - Tree shake dependencies
+
+3. Transition can be gradual (multiple outputs)
