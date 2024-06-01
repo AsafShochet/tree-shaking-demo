@@ -2,7 +2,7 @@
   "name": "tree-shaking-lecture",
   "version": "1.0.0",
   "description": "Library created for the best lecture in the upper hemisphere about tree shaking",
-  "author": "your father is naked ",
+  "author": "Asaf Shochet Avida",
   "license": "ISC",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
