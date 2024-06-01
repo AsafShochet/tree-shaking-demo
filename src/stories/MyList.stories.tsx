@@ -13,3 +13,9 @@ export const Primary = Template.bind({});
 Primary.args = {
   items: ["Item 1", "Item 2", "Item 3"],
 };
+
+export const Sorted = Template.bind({});
+Sorted.args = {
+  items: ["Item 2", "Item 3", "AA", "BB"],
+  shouldSort: true,
+};
