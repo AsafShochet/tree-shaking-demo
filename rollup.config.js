@@ -13,11 +13,11 @@ const pkg = await import("./package.json", {
 export default {
   input: "src/index.ts",
   output: [
-    {
-      file: pkg.default.main,
-      format: "cjs",
-      sourcemap: true,
-    },
+    // {
+    //   file: pkg.default.main,
+    //   format: "cjs",
+    //   sourcemap: true,
+    // },
     {
       file: pkg.default.module,
       format: "esm",

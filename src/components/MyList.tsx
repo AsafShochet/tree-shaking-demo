@@ -1,4 +1,5 @@
-import { sortBy } from "lodash";
+// optimize from lodash to lodash esm
+import sortBy from "lodash/sortBy";
 import React from "react";
 
 export interface MyListProps {
