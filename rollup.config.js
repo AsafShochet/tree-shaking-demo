@@ -5,6 +5,7 @@ import commonjs from "@rollup/plugin-commonjs";
 import babel from "@rollup/plugin-babel";
 import terser from "@rollup/plugin-terser";
 import json from "@rollup/plugin-json"; // Import the JSON plugin
+import { visualizer } from "rollup-plugin-visualizer";
 
 const pkg = await import("./package.json", {
   assert: { type: "json" },
@@ -34,5 +35,6 @@ export default {
     }),
     json(),
     terser(),
+    visualizer(),
   ],
 };
