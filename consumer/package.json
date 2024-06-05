@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack serve",
-    "build": "webpack"
+    "build": "webpack",
+    "build-library": "cd ../library && npm run build && npm pack",
+    "build-all": "npm run build-library && npm run build"
   },
   "author": "Asaf Shochet Avida",
   "license": "ISC",

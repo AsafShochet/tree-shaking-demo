@@ -1,6 +1,6 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import { MyButton } from "tree-shaking-lecture";
+import { MyList, MyButton } from "tree-shaking-lecture";
 
 const App = () => (
   <div>
@@ -10,6 +10,7 @@ const App = () => (
   </div>
 );
 
+console.log(MyList);
 const container = document.getElementById("root");
 const root = createRoot(container as HTMLElement);
 root.render(<App />);

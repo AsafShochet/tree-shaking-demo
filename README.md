@@ -1,5 +1,13 @@
 Lecture:
 
+# Build wars
+
+- ESM vs commonjs vs amd
+
+# Code
+
+- Show consumer project => build size, webpack for the consumer
+
 - Show the library
 - Show bundle analyzer + size
 - Move react to peer dependency
@@ -12,7 +20,10 @@ Lecture:
 - Shake itself (lodash)
 - Move dependencies to peer dependencies (react + react-dom)
 
-Summary:
+- Show size graph
+- Keep it over time
+
+# Summary
 
 1. Optimize the library itself:
 
@@ -26,3 +37,9 @@ Summary:
 - Tree shake dependencies
 
 3. Transition can be gradual (multiple outputs)
+
+# Motivations:
+
+- Size
+- Security
+- Side effect
