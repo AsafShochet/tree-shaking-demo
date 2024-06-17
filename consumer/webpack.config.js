@@ -19,6 +19,14 @@ module.exports = {
         use: "ts-loader",
         exclude: /node_modules/,
       },
+      {
+        test: /\.scss$/, // Add this rule for SCSS files
+        use: [
+          "style-loader", // Injects styles into the DOM
+          "css-loader", // Turns CSS into CommonJS
+          "sass-loader", // Compiles Sass to CSS
+        ],
+      },
     ],
   },
   plugins: [

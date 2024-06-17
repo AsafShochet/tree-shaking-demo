@@ -1,0 +1,44 @@
+* {
+  font-family: Lato, sans-serif;
+}
+body {
+  margin: 0;
+}
+.header {
+  height: 60px;
+  font-size: 20px;
+  font-family: Lato, sans-serif;
+  padding: 20px;
+  background-color: rgb(215 209 213 / 52%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.main {
+  padding: 20px;
+  font-size: 18px;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.generator {
+  display: flex;
+  gap: 20px;
+  align-self: center;
+  .card {
+    height: 200px;
+    width: 200px;
+    border: 1px solid rgba(33, 32, 32, 0.306);
+    border-radius: 3px;
+    padding: 10px;
+  }
+}
+
+.result {
+  align-self: center;
+  font-size: 30px;
+}
