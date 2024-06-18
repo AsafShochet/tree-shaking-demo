@@ -7,8 +7,9 @@
     "start": "webpack serve",
     "build": "webpack",
     "build-library": "cd ../library && npm run build && npm pack",
-    "build-all": "npm run build-library && npm i && npm run build",
-    "build-and-serve": "npm run build-library && npm run start"
+    "build-all": "npm run build-library && npm run build",
+    "build-and-serve": "npm run build-library && npm run start",
+    "link-all": "cd ../library && npm link && npm link ../consumer/node_modules/react && npm link ../consumer/node_modules/react-dom && cd ../consumer && npm link tree-shaking-lecture"
   },
   "sideEffects": "*.scss",
   "author": "Asaf Shochet Avida",
