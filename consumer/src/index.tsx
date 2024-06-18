@@ -1,12 +1,6 @@
 import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
-// import {
-//   MyList,
-//   MyButton,
-//   MyDropdown,
-//   MyDatePicker,
-// } from "tree-shaking-lecture";
-import SharedComponents from "tree-shaking-lecture";
+import { MyButton, MyDropdown, MyDatePicker } from "tree-shaking-lecture";
 import { Head } from "./components/Head";
 import { getRandomAIWord } from "./services/RandomAI";
 import { getRandomSecurityWord } from "./services/RandomSecurity";
@@ -32,7 +26,7 @@ const App = () => {
           <div className="card">
             <label>Goal</label>
             <div className="content">
-              <SharedComponents.MyDropdown
+              <MyDropdown
                 options={[
                   { label: "To be sold to a giant", value: "Option 1" },
                   { label: "To become a giant", value: "Option 2" },
@@ -44,14 +38,14 @@ const App = () => {
           <div className="card">
             <label>Date</label>
             <div className="content">
-              <SharedComponents.MyDatePicker
+              <MyDatePicker
                 value={new Date().toISOString()}
                 onChange={(e) => console.log(e.target.value)}
               />
             </div>
           </div>
           <div className="card">
-            <SharedComponents.MyButton
+            <MyButton
               onClick={() =>
                 setName(
                   `${getRandomSecurityWord()} ${getRandomAIWord()} ${getRandomStartupName()}`
@@ -59,7 +53,7 @@ const App = () => {
               }
             >
               Go!
-            </SharedComponents.MyButton>
+            </MyButton>
           </div>
         </div>
         <div className="result">
