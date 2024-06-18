@@ -24,11 +24,35 @@ body {
   flex-direction: column;
   gap: 20px;
 }
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
 .generator {
+  font-size: 30px;
   display: flex;
   gap: 20px;
   align-self: center;
+  flex-direction: column;
+  margin-top: 50px;
+  .datepicker {
+    display: flex;
+    gap: 20px;
+    input {
+      font-size: 20px;
+      padding: 10px;
+    }
+  }
+  .button {
+    display: flex;
+    justify-content: center;
+    button {
+      font-size: 20px;
+      padding: 10px;
+    }
+  }
   .card {
     height: 200px;
     width: 200px;
@@ -41,4 +65,16 @@ body {
 .result {
   align-self: center;
   font-size: 30px;
+}
+
+h1,
+h4 {
+  margin: 0;
+}
+
+footer {
+  align-self: center;
+  margin-top: auto;
+  padding: 20px;
+  font-size: 20px;
 }

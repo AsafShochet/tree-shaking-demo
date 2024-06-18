@@ -1,5 +1,11 @@
 Lecture:
 
+# Setup
+
+Prepare npm links
+
+cd library && npm link && npm link ../consumer/node_modules/react && npm link ../consumer/node_modules/react-dom && cd ../consumer && npm link tree-shaking-lecture
+
 # Build wars
 
 - ESM vs commonjs vs amd

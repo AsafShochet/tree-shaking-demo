@@ -1,16 +1,31 @@
 import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
-import { MyButton, MyDropdown, MyDatePicker } from "tree-shaking-lecture";
+import MyComponents from "tree-shaking-lecture";
 import { Head } from "./components/Head";
-import { getRandomAIWord } from "./services/RandomAI";
-import { getRandomSecurityWord } from "./services/RandomSecurity";
-import { getRandomStartupName } from "./services/RandomFluff";
+import {
+  getRandomAIWord,
+  getRandomSecurityWord,
+  getRandomAnimal,
+  getSocialNetworkName,
+} from "./services/WordGenerator";
 import "./main.scss";
 
 const App = () => {
   const [name, setName] = useState<string | null>(null);
+  const [date, setDate] = useState<string>("");
+
+  const generateName = () => {
+    if (date.includes("2024-")) {
+      return `${getRandomAIWord()} ${getRandomAnimal()}`;
+    }
+    if (date.includes("2022-")) {
+      return `${getRandomSecurityWord()} ${getRandomAnimal()}`;
+    }
+    return `${getSocialNetworkName()} ${getRandomAnimal()}`;
+  };
+
   return (
-    <div>
+    <div className="container">
       <Head />
       <header className="header">
         <div>Tree Shaking Lecture</div>
@@ -18,42 +33,20 @@ const App = () => {
       </header>
       <div className="main">
         <h1>Startup generator</h1>
-        <div className="fortune">
-          Fortunes: One day, you'll be on The Marker cover with a white shirt
-          and 2 bald men
-        </div>
+        <h4>And time machine</h4>
+
         <div className="generator">
-          <div className="card">
-            <label>Goal</label>
-            <div className="content">
-              <MyDropdown
-                options={[
-                  { label: "To be sold to a giant", value: "Option 1" },
-                  { label: "To become a giant", value: "Option 2" },
-                ]}
-                onChange={(e) => console.log(e.target.value)}
-              />
-            </div>
-          </div>
-          <div className="card">
+          <div className="datepicker">
             <label>Date</label>
-            <div className="content">
-              <MyDatePicker
-                value={new Date().toISOString()}
-                onChange={(e) => console.log(e.target.value)}
-              />
-            </div>
+            <MyComponents.MyDatePicker
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+            />
           </div>
-          <div className="card">
-            <MyButton
-              onClick={() =>
-                setName(
-                  `${getRandomSecurityWord()} ${getRandomAIWord()} ${getRandomStartupName()}`
-                )
-              }
-            >
+          <div className="button">
+            <MyComponents.MyButton onClick={() => setName(generateName())}>
               Go!
-            </MyButton>
+            </MyComponents.MyButton>
           </div>
         </div>
         <div className="result">
@@ -64,6 +57,12 @@ const App = () => {
           )}
         </div>
       </div>
+      <footer>
+        <div className="fortune">
+          Fortunes: One day, you'll be on The Marker cover with a white shirt
+          and 2 bald men
+        </div>
+      </footer>
     </div>
   );
 };
