@@ -10,7 +10,7 @@
     "build-all": "npm run build-library && npm i && npm run build",
     "build-and-serve": "npm run build-library && npm run start"
   },
-  "sideEffects": false,
+  "sideEffects": "*.scss",
   "author": "Asaf Shochet Avida",
   "license": "ISC",
   "dependencies": {
