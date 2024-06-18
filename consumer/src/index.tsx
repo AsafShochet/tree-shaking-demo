@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
-import MyComponents from "tree-shaking-lecture";
+// import MyComponents from "tree-shaking-lecture";
+import { MyButton, MyDatePicker } from "tree-shaking-lecture";
 import { Head } from "./components/Head";
 import {
   getRandomAIWord,
@@ -38,15 +39,13 @@ const App = () => {
         <div className="generator">
           <div className="datepicker">
             <label>Date</label>
-            <MyComponents.MyDatePicker
+            <MyDatePicker
               value={date}
               onChange={(e) => setDate(e.target.value)}
             />
           </div>
           <div className="button">
-            <MyComponents.MyButton onClick={() => setName(generateName())}>
-              Go!
-            </MyComponents.MyButton>
+            <MyButton onClick={() => setName(generateName())}>Go!</MyButton>
           </div>
         </div>
         <div className="result">
