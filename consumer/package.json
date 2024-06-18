@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack serve",
     "build": "webpack",
-    "build-library": "cd ../library && npm run build && npm pack",
+    "build-library": "cd ../library && npm run build",
     "build-all": "npm run build-library && npm run build",
     "build-and-serve": "npm run build-library && npm run start"
   },

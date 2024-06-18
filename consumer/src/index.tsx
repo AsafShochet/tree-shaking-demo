@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
-import {
-  MyList,
-  MyButton,
-  MyDropdown,
-  MyDatePicker,
-} from "tree-shaking-lecture";
+// import {
+//   MyList,
+//   MyButton,
+//   MyDropdown,
+//   MyDatePicker,
+// } from "tree-shaking-lecture";
+import SharedComponents from "tree-shaking-lecture";
 import { Head } from "./components/Head";
-import "./main.scss";
 import { getRandomAIWord } from "./services/RandomAI";
 import { getRandomSecurityWord } from "./services/RandomSecurity";
 import { getRandomStartupName } from "./services/RandomFluff";
+import "./main.scss";
 
 const App = () => {
   const [name, setName] = useState<string | null>(null);
@@ -31,7 +32,7 @@ const App = () => {
           <div className="card">
             <label>Goal</label>
             <div className="content">
-              <MyDropdown
+              <SharedComponents.MyDropdown
                 options={[
                   { label: "To be sold to a giant", value: "Option 1" },
                   { label: "To become a giant", value: "Option 2" },
@@ -43,14 +44,14 @@ const App = () => {
           <div className="card">
             <label>Date</label>
             <div className="content">
-              <MyDatePicker
+              <SharedComponents.MyDatePicker
                 value={new Date().toISOString()}
                 onChange={(e) => console.log(e.target.value)}
               />
             </div>
           </div>
           <div className="card">
-            <MyButton
+            <SharedComponents.MyButton
               onClick={() =>
                 setName(
                   `${getRandomSecurityWord()} ${getRandomAIWord()} ${getRandomStartupName()}`
@@ -58,7 +59,7 @@ const App = () => {
               }
             >
               Go!
-            </MyButton>
+            </SharedComponents.MyButton>
           </div>
         </div>
         <div className="result">
@@ -73,7 +74,6 @@ const App = () => {
   );
 };
 
-console.log(MyList);
 const container = document.getElementById("root");
 const root = createRoot(container as HTMLElement);
 root.render(<App />);
