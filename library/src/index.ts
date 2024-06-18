@@ -7,3 +7,4 @@ export { MyList } from "./components/MyList";
 export { MyTitle } from "./components/MyTitle";
 export { MyCarousel } from "./components/MyCarousel";
 export { MySelect } from "./components/MySelect";
+export { MyFunction } from "./components/MyFunction";

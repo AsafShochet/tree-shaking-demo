@@ -13,15 +13,17 @@ const pkg = await import("./package.json", {
 export default {
   input: "src/index.ts",
   output: [
+    // {
+    //   file: pkg.default.main,
+    //   format: "cjs",
+    //   sourcemap: true,
+    // },
     {
-      file: pkg.default.main,
-      format: "cjs",
-      sourcemap: true,
-    },
-    {
-      file: pkg.default.module,
+      dir: "dist",
+      preserveModules: true,
       format: "esm",
       sourcemap: true,
+      exports: "named",
     },
   ],
   plugins: [
@@ -32,6 +34,7 @@ export default {
     babel({
       exclude: "node_modules/**",
       presets: ["@babel/preset-env", "@babel/preset-react"],
+      babelHelpers: "runtime",
     }),
     json(),
     terser(),
