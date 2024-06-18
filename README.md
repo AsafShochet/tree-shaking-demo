@@ -2,9 +2,20 @@ Lecture:
 
 # Setup
 
-Prepare npm links
+Before the talk:
 
+1. Prepare npm links
+
+```
 cd library && npm link && npm link ../consumer/node_modules/react && npm link ../consumer/node_modules/react-dom && cd ../consumer && npm link tree-shaking-lecture
+```
+
+2. Change local code:
+
+- library's package.json, remove type module
+- used default exports in library-index.ts, and consumer tsx
+- remove sideEffects true in consumer
+- de-optimize lodash
 
 # Build wars
 
