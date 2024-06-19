@@ -12,11 +12,10 @@ cd library && npm link && npm link ../consumer/node_modules/react && npm link ..
 
 2. Change local code:
 
-- library's package.json, remove type module
-- uncommment the cjs build
-- used default exports in library-index.ts, and consumer tsx
-- remove sideEffects true in consumer
+- rollup - uncommment the cjs build
 - de-optimize lodash
+- remove sideEffects true in consumer + library
+- used default exports in library-index.ts, and consumer tsx
 
 # Build wars
 
