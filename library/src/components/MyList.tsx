@@ -1,5 +1,7 @@
 // optimize from lodash to lodash esm
-import sortBy from "lodash/sortBy";
+// import sortBy from "lodash/sortBy";
+import { sortBy } from "lodash-es";
+// import _ from "lodash";
 import React from "react";
 
 export interface MyListProps {
