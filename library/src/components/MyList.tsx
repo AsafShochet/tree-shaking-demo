@@ -1,7 +1,7 @@
 // optimize from lodash to lodash esm
 // import sortBy from "lodash/sortBy";
-import { sortBy } from "lodash-es";
-// import _ from "lodash";
+// import { sortBy } from "lodash-es";
+import _ from "lodash";
 import React from "react";
 
 export interface MyListProps {
@@ -10,7 +10,7 @@ export interface MyListProps {
 }
 
 export const MyList: React.FC<MyListProps> = ({ items, shouldSort }) => {
-  const itemsToDisplay = shouldSort ? sortBy(items) : items;
+  const itemsToDisplay = shouldSort ? _.sortBy(items) : items;
   return (
     <ul>
       {itemsToDisplay.map((item, index) => (
